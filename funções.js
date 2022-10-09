@@ -5,7 +5,7 @@ function Nome()
 };
 function Telefone()
 {
-    var nome= document.getElementById("idtel");
+    var telefone= document.getElementById("idtel");
     return telefone;
 };
 
@@ -23,6 +23,9 @@ function Mensagem()
 function alerta()
 {
     nome = Nome()
+    telefone = Telefone()
+    email= Email()
+    mensagem = Mensagem()
     alert("Olá " + nome + ", Seus dados foram salvos!"
     +nome
     +telefone
