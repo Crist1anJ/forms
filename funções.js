@@ -19,37 +19,32 @@ function Mensagem()
     var mensagem= document.getElementById("idmsg");
     return mensagem;
 };
+
+function calcIdade(x,y,z) {
+    var d = new Date,
+        ano = d.getFullYear(),
+        mes = d.getMonth() + 1,
+        dia= d.getDate(),
+
+        x= +x,
+        y= +y,
+        z= +z,
+
+        quantos_anos =ano -x;
+
+        if (mes < y || mes == y && dia < z) {
+            quantos_anos--;
+        }
+        return quantos_anos < 0 ? 0 : quantos_anos;
+  
+};
+
 function Idade()
 {
     var idade= document.getElementById("ididade");
-    return idade;
+    var[ano,mes,dia] = idade.split('-');
+    return calcIdade(ano,mes,dia);
 };
-
-
-
-
-function calcIdade(data) {
-    var d = new Date,
-        ano_atual = d.getFullYear(),
-        mes_atual = d.getMonth() + 1,
-        dia_atual = d.getDate(),
-        split = data.split('/'),
-        novadata = split[1] + "/" +split[0]+"/"+split[2],
-        data_americana = new Date(novadata),
-        vAno = data_americana.getFullYear(),
-        vMes = data_americana.getMonth() + 1,
-        vDia = data_americana.getDate(),
-        ano_aniversario = +vAno,
-        mes_aniversario = +vMes,
-        dia_aniversario = +vDia,
-        quantos_anos = ano_atual - ano_aniversario;
-    if (mes_atual < mes_aniversario || mes_atual == mes_aniversario && dia_atual < dia_aniversario) {
-        quantos_anos--;
-    }
-    return quantos_anos < 0 ? 0 : quantos_anos;
-};
-
-
 
 
 
@@ -59,7 +54,6 @@ function alerta()
     telefone = Telefone();
     email= Email();
     idade=Idade();
-    vidade=calcIdade(data);
     mensagem = Mensagem();
     alert("Olá " + nome.value + ", Seus dados foram salvos!"+
     "\nNome: " +nome.value+
@@ -67,6 +61,5 @@ function alerta()
     +"\nEmail: "+email.value
     +"\nIdade: "+idade.value
     +"\nMensagem do Cliente: "+mensagem.value
-    +"\nIdade calculada: "+vidade.value
     );
 };
