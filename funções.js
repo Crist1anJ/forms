@@ -19,17 +19,24 @@ function Mensagem()
     var mensagem= document.getElementById("idmsg");
     return mensagem;
 };
+function Idade()
+{
+    var idade= document.getElementById("ididade");
+    return idade;
+};
 
 function alerta()
 {
-    nome = Nome()
-    telefone = Telefone()
-    email= Email()
-    mensagem = Mensagem()
-    alert("Olá " + nome + ", Seus dados foram salvos!"
-    +nome
-    +telefone
-    +email
-    +mensagem
+    nome = Nome();
+    telefone = Telefone();
+    email= Email();
+    idade=Idade();
+    mensagem = Mensagem();
+    alert("Olá " + nome.value + ", Seus dados foram salvos!"+
+    "\nNome: " +nome.value+
+    "\nTelefone: "+telefone.value
+    +"\nEmail: "+email.value
+    +"\nIdade: "+idade.value
+    +"\nMensagem do Cliente: "+mensagem.value
     );
 };
